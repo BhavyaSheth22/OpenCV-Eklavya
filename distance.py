@@ -19,7 +19,7 @@ while(1):
 
         #finding the range red colour in the image
 
-        red = cv2.inRange(hsv, yellow_lower, yellow_upper)
+        red = cv2.inRange(hsv, red_lower, red_upper)
 
         #Morphological transformation, Dilation         
         kernel = np.ones((5 ,5), "uint8")
@@ -29,8 +29,8 @@ while(1):
         res=cv2.bitwise_and(img, img, mask = red)
 
         m = m+1
-        #Tracking Colour (Yellow) 
-        (_,contours,hierarchy)=cv2.findContours(yellow,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+        #Tracking Colour (Red) 
+        (_,contours,hierarchy)=cv2.findContours(red,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
       
         for pic, contour in enumerate(contours):
                 area = cv2.contourArea(contour)
