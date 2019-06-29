@@ -26,7 +26,7 @@ while(1):
 
         blue=cv2.dilate(red, kernel)
 
-        res=cv2.bitwise_and(img, img, mask = yellow)
+        res=cv2.bitwise_and(img, img, mask = red)
 
         m = m+1
         #Tracking Colour (Yellow) 
